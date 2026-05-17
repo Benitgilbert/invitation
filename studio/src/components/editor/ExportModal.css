@@ -1,0 +1,87 @@
+.export-modal {
+  width: min(520px, 95vw);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.export-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  cursor: pointer;
+  background: var(--bg-elevated);
+}
+
+.export-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.export-info {
+  flex: 1;
+}
+
+.export-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.export-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.sheet-option {
+  flex-direction: column;
+  align-items: stretch;
+  cursor: default;
+}
+
+.sheet-option .export-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.sheet-settings {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.modal-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.modal-footer p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
