@@ -1,6 +1,7 @@
 import { useDesignStore } from '../../store/designStore';
 import { toPx } from '../../utils/units';
 import TextElement from './TextElement';
+import ImageElement from './ImageElement';
 import './CardCanvas.css';
 
 const CANVAS_SCALE = 2.2; // display scale multiplier for comfortable editing
@@ -33,6 +34,9 @@ export default function CardCanvas({ canvasRef }) {
           width: widthPx,
           height: heightPx,
           background: getBackground(),
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          overflow: 'hidden',
         }}
       >
         {/* Divider line for double layout */}
@@ -50,16 +54,21 @@ export default function CardCanvas({ canvasRef }) {
             key={col.id}
             className={`canvas-column ${card.layout === 'single' ? 'full-width' : col.id}`}
           >
-            {col.elements.map(el => (
-              <TextElement
-                key={el.id}
-                element={el}
-                columnId={col.id}
-                canvasWidth={widthPx / (card.layout === 'double' ? 2 : 1)}
-                canvasHeight={heightPx}
-                scale={CANVAS_SCALE}
-              />
-            ))}
+            {col.elements.map(el => {
+              if (el.type === 'image') {
+                return <ImageElement key={el.id} element={el} scale={CANVAS_SCALE} />;
+              }
+              return (
+                <TextElement
+                  key={el.id}
+                  element={el}
+                  columnId={col.id}
+                  canvasWidth={widthPx / (card.layout === 'double' ? 2 : 1)}
+                  canvasHeight={heightPx}
+                  scale={CANVAS_SCALE}
+                />
+              );
+            })}
           </div>
         ))}
       </div>

@@ -213,7 +213,7 @@ export const TEMPLATES = [
     category: 'Wedding',
     thumbnail: null,
     defaultLayout: 'single',
-    background: { type: 'gradient', value: 'linear-gradient(160deg, #1a1000 0%, #2d1e00 50%, #1a1000 100%)' },
+    background: { type: 'image', value: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(/rodrige.jpeg)' },
     palette: ['#1a1000', '#c9a84c', '#fff8e7', '#8b6914'],
     elements: [
       {

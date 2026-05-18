@@ -1,0 +1,22 @@
+.image-element {
+  cursor: pointer;
+  user-select: none;
+  transition: outline 0.1s ease;
+}
+
+.image-element:hover {
+  outline: 1px dashed rgba(0, 0, 0, 0.3);
+}
+
+.image-element.selected {
+  outline: 1px solid var(--accent);
+}
+
+.image-element .selection-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  pointer-events: none;
+}
